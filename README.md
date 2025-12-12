@@ -9,7 +9,7 @@ This repository contains a modular control software stack for an Unmanned Surfac
 
 Built on **ROS 2 Jazzy**, the system implements a decoupled **"Sense-Think-Act"** architecture commonly used in naval robotics. It features real-time state estimation, a geofencing safety watchdog, and fail-safe propulsion control.
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ### 1. Perception Layer (The Sense)
 * **Node:** `dummy_gps`
@@ -26,7 +26,7 @@ Built on **ROS 2 Jazzy**, the system implements a decoupled **"Sense-Think-Act"*
 * **Function:** Simulates the hardware interface to the propulsion system.
 * **Safety:** Priority-based command execution. It listens for `STOP_ENGINES` interrupts from the autonomy layer to cut power immediately during fault conditions.
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 * Ubuntu 24.04 LTS (Noble Numbat)
@@ -52,46 +52,33 @@ Built on **ROS 2 Jazzy**, the system implements a decoupled **"Sense-Think-Act"*
     source install/setup.bash
     ```
 
-## 🎮 Usage
+##  Usage
 
 ### One-Command Launch
 Launch the entire stack (Sensors, Autonomy, Motors) using the custom launch file:
 ```bash
 ros2 launch usv_control system_launch.py
+```
 
 
-
-
-Visualization
+## Visualization
 
 To view the vessel's real-time position and vector:
 
-    Open a new terminal.
+Open a new terminal.
 
-    Run RViz2:
+Run RViz2:
     Bash
-
+```
     ros2 run rviz2 rviz2
+```
+   Add a PointStamped display listening to topic /usv/vis_point.
+   Ensure Fixed Frame is set to map.
 
-    Add a PointStamped display listening to topic /usv/vis_point.
-
-    Ensure Fixed Frame is set to map.
-
-🛠️ Tech Stack & Skills
-
-    Middleware: ROS 2 (DDS/RTPS communication)
-
-    Language: Python (rclpy)
-
-    Tools: Gazebo (Simulation concepts), RViz (Visualization), Git (VC)
-
-    Concepts: QoS (Quality of Service), TF2 (Coordinate Transforms), Pub/Sub Pattern
-
-
-
-
-
-
-
+ Tech Stack & Skills
+   Middleware: ROS 2 (DDS/RTPS communication)
+   Language: Python (rclpy)
+   Tools: Gazebo (Simulation concepts), RViz (Visualization), Git (VC)
+   Concepts: QoS (Quality of Service), TF2 (Coordinate Transforms), Pub/Sub Pattern
 
 
